@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               viewport-fit=cover">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="light">
+<meta name="theme-color" content="#ffe6ef">
+
+<title>For My Love 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 sans-serif;
+    background: #ffe9f1;
+    color: #633746;
+    overflow-x: hidden;
+}
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+#loading {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffdce8, #fff4f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+.loading-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+#loading p {
+    margin-top: 20px;
+    color: #c65378;
+    font-size: 16px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.page {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    color: #ff8caf;
+    opacity: 0.65;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+    width: 100%;
+    max-width: 650px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 35px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow:
+        0 20px 60px rgba(199,77,117,0.18);
+    position: relative;
+    z-index: 5;
+    animation: cardIn 1s ease;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+.crown {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cake {
+    font-size: 75px;
+    animation: cakeBounce 2s infinite;
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.subtitle {
+    margin-top: 15px;
+    color: #db6a8d;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 12vw, 68px);
+    line-height: 1.05;
+    color: #d6537c;
+    margin: 15px 0;
+}
+
+.name {
+    color: #ff719d;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo {
+    width: 180px;
+    height: 180px;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 7px solid #ffd1df;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(205,79,120,.2);
+}
+
+/*
+If you don't have a photo yet,
+you can remove the <img> element.
+*/
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.main-btn {
+    margin-top: 20px;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        #ff87ad,
+        #d9537d
+    );
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 12px 25px rgba(213,82,124,.25);
+    transition: transform .2s ease;
+}
+
+.main-btn:active {
+    transform: scale(.94);
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.letter {
+    width: 100%;
+    max-width: 700px;
+    background: #fffafc;
+    border-radius: 30px;
+    padding: 35px 25px;
+    position: relative;
+    z-index: 5;
+    box-shadow:
+        0 20px 60px rgba(199,77,117,.18);
+    animation: cardIn 1s ease;
+}
+
+.letter h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    color: #d6537c;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.letter p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    color: #d6537c;
+    font-weight: bold;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    color: #d6537c;
+    font-family: cursive;
+    font-size: 28px;
+}
+
+.small-btn {
+    display: block;
+    margin: 25px auto 0;
+    padding: 13px 24px;
+    border-radius: 50px;
+    background: #ffe0ea;
+    color: #c64d74;
+    font-weight: bold;
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise {
+    display: none;
+    margin-top: 25px;
+    background: #fff0f5;
+    padding: 22px;
+    border-radius: 20px;
+    color: #c44d74;
+    line-height: 1.8;
+    animation: cardIn .6s ease;
+}
+
+.surprise.show {
+    display: block;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    color: #d6537c;
+    font-size: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    z-index: 50;
+}
+
+/* =========================
+   HEART EXPLOSION
+========================= */
+
+.explosion {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    z-index: 999;
+    font-size: 25px;
+    animation: explode 1.3s forwards ease-out;
+}
+
+@keyframes explode {
+    from {
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 700px) {
+
+    .card {
+        padding: 55px 45px;
+    }
+
+    .letter {
+        padding: 50px;
+    }
+
+    .letter p {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADING SCREEN -->
+
+<div id="loading">
+    <div class="loading-heart">💗</div>
+    <p>Preparing something special for you...</p>
+</div>
+
+
+<!-- MUSIC
+     Replace birthday.mp3 with your own music file.
+-->
+
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn"
+        onclick="toggleMusic()"
+        id="musicButton">
+    🎵
+</button>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="floating-heart" style="
+        left:10%;
+        animation-duration:8s;
+        font-size:25px;">♥</div>
+
+    <div class="floating-heart" style="
+        left:25%;
+        animation-duration:11s;
+        animation-delay:2s;
+        font-size:18px;">♡</div>
+
+    <div class="floating-heart" style="
+        left:50%;
+        animation-duration:9s;
+        animation-delay:4s;
+        font-size:28px;">♥</div>
+
+    <div class="floating-heart" style="
+        left:75%;
+        animation-duration:12s;
+        animation-delay:1s;
+        font-size:20px;">♡</div>
+
+    <div class="floating-heart" style="
+        left:90%;
+        animation-duration:10s;
+        animation-delay:3s;
+        font-size:26px;">♥</div>
+
+
+    <div class="card">
+
+        <div class="crown">👑</div>
+
+        <div class="cake">🎂</div>
+
+        <div class="subtitle">
+            Today is your special day
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            <span class="name">Noratirah binti Nurrudin Tsen 💗</span>
+        </h1>
+
+        <!--
+        CHANGE THE IMAGE BELOW
+
+        Example:
+        src="her-photo.jpg"
+
+        Then upload her-photo.jpg
+        into the same GitHub repository.
+        -->
+
+        <img
+            class="photo"
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80"
+            alt="Beautiful birthday girl"
+        >
+
+        <p class="message">
+            Teruntuk wanita cantil in my world,
+            Is made this just for you. 🌷
+        </p>
+
+        <button class="main-btn"
+                onclick="openLetter()">
+            💌 Open Your Birthday Letter
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="floating-heart" style="
+        left:8%;
+        animation-duration:9s;">♥</div>
+
+    <div class="floating-heart" style="
+        left:30%;
+        animation-duration:12s;
+        animation-delay:2s;">♡</div>
+
+    <div class="floating-heart" style="
+        left:60%;
+        animation-duration:10s;
+        animation-delay:1s;">♥</div>
+
+    <div class="floating-heart" style="
+        left:85%;
+        animation-duration:13s;
+        animation-delay:3s;">♡</div>
+
+
+    <div class="letter">
+
+        <h2>
+            A Little Letter For You 💕
+        </h2>
+
+        <p>
+            Happy birthday, sayang. 🥺💗
+        </p>
+
+        <p>
+            Haritok bukan hari yang biasa. It's the day
+            the world got a little brighter because
+            <span class="highlight">you were born</span>.
+        </p>
+
+        <p>
+            Is harap Atirah tauk how incredibly special you
+            are to me. Your smile, your laugh, your
+            little habits, your silly moments...
+            somehow semua ya jadi my favorite things.
+        </p>
+
+        <p>
+            Thank you for being someone who makes
+            ordinary days feel special. Thank you for
+            all the memories we've made and all the
+            ones we haven't made yet.
+        </p>
+
+        <p>
+            On your birthday, Is wish you happiness
+            that stays, dreams that come true,
+            peaceful days, exciting adventures,
+            and countless reasons to smile. 🌸
+        </p>
+
+        <p>
+            And is harap is dapat selalu ada
+            for many more ur special days — annoying you,
+            making you laugh, and loving you a little
+            more every year. ❤️
+        </p>
+
+        <p>
+            You deserve the absolute best.
+            Never forget that.
+        </p>
+
+        <div class="signature">
+            Forever yours,<br>
+            ❤️ Your capybara hensem
+        </div>
+
+
+        <button class="main-btn"
+                onclick="showSurprise()">
+            🎁 One Last Surprise
+        </button>
+
+
+        <div class="surprise" id="surprise">
+
+            🌷 You are beautiful.<br>
+            💗 You are precious.<br>
+            ✨ You are loved.<br><br>
+
+            And most importantly...
+
+            <br><br>
+
+            <strong>
+                I'm really, really lucky to have you. 🥺❤️
+            </strong>
+
+            <br><br>
+
+            Happy Birthday, beautiful. 🎂🎀
+
+        </div>
+
+
+        <button class="small-btn"
+                onclick="goBack()">
+            ← Go Back
+        </button>
+
+    </div>
+</section>
+
+
+<script>
+
+/* =========================
+   LOADING
+========================= */
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+
+        const loading =
+            document.getElementById("loading");
+
+        loading.style.opacity = "0";
+
+        setTimeout(function() {
+            loading.style.display = "none";
+        }, 800);
+
+    }, 1500);
+
+});
+
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+function openLetter() {
+
+    document
+        .getElementById("page1")
+        .classList.remove("active");
+
+    document
+        .getElementById("page2")
+        .classList.add("active");
+
+    window.scrollTo(0, 0);
+
+    heartExplosion();
+
+    /*
+       Safari requires user interaction before
+       playing audio, so this is a good place
+       to start the music.
+    */
+
+    const music =
+        document.getElementById("music");
+
+    music.play()
+        .then(() => {
+            document
+                .getElementById("musicButton")
+                .innerText = "🔊";
+        })
+        .catch(() => {
+            // Music can still be started
+            // with the music button.
+        });
+}
+
+
+function goBack() {
+
+    document
+        .getElementById("page2")
+        .classList.remove("active");
+
+    document
+        .getElementById("page1")
+        .classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+function showSurprise() {
+
+    document
+        .getElementById("surprise")
+        .classList.add("show");
+
+    heartExplosion();
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+    if (music.paused) {
+
+        music.play()
+            .then(() => {
+                button.innerText = "🔊";
+            })
+            .catch(() => {
+                alert(
+                    "Tap the button again to start the music 🎵"
+                );
+            });
+
+    } else {
+
+        music.pause();
+        button.innerText = "🎵";
+    }
+}
+
+
+/* =========================
+   HEART EXPLOSION
+========================= */
+
+function heartExplosion() {
+
+    const hearts = [
+        "💗",
+        "💕",
+        "💖",
+        "💞",
+        "❤️",
+        "🌸",
+        "✨"
+    ];
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "explosion";
+
+        heart.innerText =
+            hearts[
+                Math.floor(
+                    Math.random() * hearts.length
+                )
+            ];
+
+        const x =
+            (Math.random() * 500 - 250) + "px";
+
+        const y =
+            (Math.random() * 600 - 300) + "px";
+
+        heart.style.setProperty("--x", x);
+        heart.style.setProperty("--y", y);
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1400);
+    }
+}
+
+</script>
+
+</body>
+</html>
