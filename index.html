@@ -2,84 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
+      content="width=device-width,
+               initial-scale=1.0,
                viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="light">
 <meta name="theme-color" content="#ffe6ef">
 
-<title>For My Love 💗</title>
+<title>For Sayang 💗</title>
+
+<!-- Cute fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     min-height: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 sans-serif;
+    font-family: "Quicksand", sans-serif;
     background: #ffe9f1;
     color: #633746;
     overflow-x: hidden;
 }
 
 /* =========================
-   LOADING SCREEN
+   LOADING
 ========================= */
 
 #loading {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, #ffdce8, #fff4f7);
+    background: linear-gradient(
+        135deg,
+        #ffdce8,
+        #fff7fa
+    );
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     z-index: 9999;
-    transition: opacity 0.8s ease;
+
+    transition: opacity .8s ease;
 }
 
 .loading-heart {
-    font-size: 70px;
+    font-size: 75px;
     animation: heartbeat 1.2s infinite;
 }
 
 #loading p {
-    margin-top: 20px;
+    margin-top: 15px;
     color: #c65378;
     font-size: 16px;
+    font-weight: 600;
 }
 
 @keyframes heartbeat {
+
     0%, 100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.25);
     }
 }
 
+
 /* =========================
-   GENERAL
+   PAGES
 ========================= */
 
 .page {
     min-height: 100vh;
     min-height: 100svh;
+
     display: none;
+
     justify-content: center;
     align-items: center;
+
     padding: 25px 18px;
+
     position: relative;
+
     overflow: hidden;
 }
 
@@ -87,34 +113,48 @@ body {
     display: flex;
 }
 
+
 /* =========================
    FLOATING HEARTS
 ========================= */
 
 .floating-heart {
     position: absolute;
+
     bottom: -50px;
+
     color: #ff8caf;
-    opacity: 0.65;
+
+    opacity: .65;
+
     pointer-events: none;
+
     animation: floatUp linear infinite;
 }
 
 @keyframes floatUp {
+
     from {
-        transform: translateY(0) rotate(0);
+        transform:
+            translateY(0)
+            rotate(0deg);
+
         opacity: 0;
     }
 
     20% {
-        opacity: 0.7;
+        opacity: .7;
     }
 
     to {
-        transform: translateY(-120vh) rotate(360deg);
+        transform:
+            translateY(-120vh)
+            rotate(360deg);
+
         opacity: 0;
     }
 }
+
 
 /* =========================
    MAIN CARD
@@ -123,44 +163,69 @@ body {
 .card {
     width: 100%;
     max-width: 650px;
-    background: rgba(255,255,255,0.92);
+
+    background:
+        rgba(255,255,255,.94);
+
     border-radius: 35px;
-    padding: 40px 25px;
+
+    padding: 42px 25px;
+
     text-align: center;
-    box-shadow:
-        0 20px 60px rgba(199,77,117,0.18);
+
     position: relative;
+
     z-index: 5;
+
+    box-shadow:
+        0 20px 60px
+        rgba(199,77,117,.18);
+
     animation: cardIn 1s ease;
+
+    border: 2px solid #ffe0ea;
 }
 
 @keyframes cardIn {
+
     from {
         opacity: 0;
-        transform: translateY(35px) scale(.95);
+
+        transform:
+            translateY(35px)
+            scale(.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
+
 /* =========================
-   PAGE 1
+   CUTE DECORATION
 ========================= */
 
 .crown {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 32px;
+
+    margin-bottom: 5px;
+
+    transform: rotate(-5deg);
 }
 
 .cake {
     font-size: 75px;
+
     animation: cakeBounce 2s infinite;
 }
 
 @keyframes cakeBounce {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -170,247 +235,531 @@ body {
     }
 }
 
+
+/* =========================
+   TEXT
+========================= */
+
 .subtitle {
+
     margin-top: 15px;
+
     color: #db6a8d;
+
     font-size: 14px;
-    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
 h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(42px, 12vw, 68px);
-    line-height: 1.05;
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(52px, 14vw, 78px);
+
+    line-height: .95;
+
     color: #d6537c;
+
     margin: 15px 0;
+
+    font-weight: 700;
+
+    transform: rotate(-2deg);
 }
 
 .name {
+
     color: #ff719d;
+
+    display: inline-block;
+
+    transform:
+        rotate(2deg);
 }
 
 .message {
+
     font-size: 17px;
+
     line-height: 1.8;
-    margin: 20px auto;
+
+    margin: 22px auto;
+
     max-width: 500px;
+
+    font-weight: 500;
 }
+
 
 /* =========================
    PHOTO
 ========================= */
 
 .photo {
+
     width: 180px;
     height: 180px;
+
     margin: 25px auto;
+
     border-radius: 50%;
+
     border: 7px solid #ffd1df;
+
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(205,79,120,.2);
+
+    box-shadow:
+        0 10px 30px
+        rgba(205,79,120,.2);
+
+    transform: rotate(-3deg);
+
+    transition:
+        transform .3s ease;
 }
 
-/*
-If you don't have a photo yet,
-you can remove the <img> element.
-*/
+.photo:hover {
+
+    transform:
+        rotate(3deg)
+        scale(1.04);
+}
+
 
 /* =========================
    BUTTON
 ========================= */
 
 button {
+
     border: none;
+
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
 }
 
 .main-btn {
+
     margin-top: 20px;
-    padding: 16px 30px;
+
+    padding:
+        15px 28px;
+
     border-radius: 50px;
-    background: linear-gradient(
-        135deg,
-        #ff87ad,
-        #d9537d
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff87ad,
+            #d9537d
+        );
+
     color: white;
+
     font-size: 16px;
+
     font-weight: 700;
-    box-shadow: 0 12px 25px rgba(213,82,124,.25);
-    transition: transform .2s ease;
+
+    box-shadow:
+        0 12px 25px
+        rgba(213,82,124,.25);
+
+    transition:
+        transform .2s ease;
 }
 
 .main-btn:active {
-    transform: scale(.94);
+
+    transform:
+        scale(.94);
 }
 
+
 /* =========================
-   PAGE 2
+   LETTER
 ========================= */
 
 .letter {
+
     width: 100%;
+
     max-width: 700px;
-    background: #fffafc;
+
+    background:
+        #fffafc;
+
     border-radius: 30px;
-    padding: 35px 25px;
+
+    padding:
+        38px 25px;
+
     position: relative;
+
     z-index: 5;
+
     box-shadow:
-        0 20px 60px rgba(199,77,117,.18);
-    animation: cardIn 1s ease;
+        0 20px 60px
+        rgba(199,77,117,.18);
+
+    animation:
+        cardIn 1s ease;
+
+    border:
+        2px solid #ffe0ea;
 }
+
+
+/* Little decorative hearts */
+
+.letter::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    top: 12px;
+    left: 20px;
+
+    font-size: 32px;
+
+    color: #ff9fbb;
+
+    transform:
+        rotate(-15deg);
+}
+
+.letter::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    bottom: 12px;
+    right: 20px;
+
+    font-size: 32px;
+
+    color: #ff9fbb;
+
+    transform:
+        rotate(15deg);
+}
+
+
+/* =========================
+   LETTER TITLE
+========================= */
 
 .letter h2 {
+
     text-align: center;
-    font-family: Georgia, serif;
+
+    font-family:
+        "Caveat",
+        cursive;
+
     color: #d6537c;
-    font-size: 35px;
+
+    font-size:
+        clamp(42px, 11vw, 55px);
+
+    line-height: 1;
+
     margin-bottom: 30px;
+
+    font-weight: 700;
+
+    transform:
+        rotate(-2deg);
 }
 
+
+/* =========================
+   LETTER TEXT
+========================= */
+
 .letter p {
+
     font-size: 16px;
+
     line-height: 2;
+
     margin-bottom: 18px;
+
+    font-weight: 500;
 }
 
 .highlight {
+
     color: #d6537c;
-    font-weight: bold;
+
+    font-weight: 700;
+
+    background:
+        #ffe1eb;
+
+    padding:
+        2px 7px;
+
+    border-radius:
+        8px;
 }
+
+
+/* =========================
+   SIGNATURE
+========================= */
 
 .signature {
+
     text-align: right;
+
     margin-top: 30px;
+
     color: #d6537c;
-    font-family: cursive;
-    font-size: 28px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    transform:
+        rotate(-3deg);
 }
 
-.small-btn {
-    display: block;
-    margin: 25px auto 0;
-    padding: 13px 24px;
-    border-radius: 50px;
-    background: #ffe0ea;
-    color: #c64d74;
-    font-weight: bold;
-}
 
 /* =========================
    SURPRISE
 ========================= */
 
 .surprise {
+
     display: none;
+
     margin-top: 25px;
-    background: #fff0f5;
-    padding: 22px;
-    border-radius: 20px;
+
+    background:
+        #fff0f5;
+
+    padding: 23px;
+
+    border-radius: 22px;
+
     color: #c44d74;
+
     line-height: 1.8;
-    animation: cardIn .6s ease;
+
+    font-size: 16px;
+
+    animation:
+        cardIn .6s ease;
+
+    border:
+        2px dashed #ffc2d5;
 }
 
 .surprise.show {
+
     display: block;
 }
 
+
 /* =========================
-   MUSIC BUTTON
+   BACK BUTTON
+========================= */
+
+.small-btn {
+
+    display: block;
+
+    margin:
+        25px auto 0;
+
+    padding:
+        13px 24px;
+
+    border-radius:
+        50px;
+
+    background:
+        #ffe0ea;
+
+    color:
+        #c64d74;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================
+   MUSIC
 ========================= */
 
 .music-btn {
+
     position: fixed;
+
     right: 18px;
     bottom: 18px;
-    width: 50px;
-    height: 50px;
+
+    width: 52px;
+    height: 52px;
+
     border-radius: 50%;
+
     background: white;
+
     color: #d6537c;
+
     font-size: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.12);
+
     z-index: 50;
+
+    border:
+        2px solid #ffe0ea;
 }
+
 
 /* =========================
    HEART EXPLOSION
 ========================= */
 
 .explosion {
+
     position: fixed;
+
     left: 50%;
     top: 50%;
-    pointer-events: none;
+
+    pointer-events:
+        none;
+
     z-index: 999;
+
     font-size: 25px;
-    animation: explode 1.3s forwards ease-out;
+
+    animation:
+        explode 1.3s
+        forwards
+        ease-out;
 }
 
 @keyframes explode {
+
     from {
-        transform: translate(-50%, -50%) scale(.5);
+
+        transform:
+            translate(-50%,-50%)
+            scale(.5);
+
         opacity: 1;
     }
 
     to {
+
         transform:
             translate(
                 calc(-50% + var(--x)),
                 calc(-50% + var(--y))
             )
             scale(1.5);
+
         opacity: 0;
     }
 }
+
 
 /* =========================
    DESKTOP
 ========================= */
 
-@media (min-width: 700px) {
+@media (min-width:700px) {
 
     .card {
-        padding: 55px 45px;
+
+        padding:
+            55px 45px;
     }
 
     .letter {
-        padding: 50px;
+
+        padding:
+            50px;
     }
 
     .letter p {
-        font-size: 17px;
+
+        font-size:
+            17px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- LOADING SCREEN -->
+
+<!-- =========================
+     LOADING SCREEN
+========================= -->
 
 <div id="loading">
-    <div class="loading-heart">💗</div>
-    <p>Preparing something special for you...</p>
+
+    <div class="loading-heart">
+        💗
+    </div>
+
+    <p>
+        making something cute for you...
+    </p>
+
 </div>
 
 
-<!-- MUSIC
-     Replace birthday.mp3 with your own music file.
--->
+<!-- =========================
+     MUSIC
+========================= -->
 
 <audio id="music" loop>
-    <source src="birthday.mp3" type="audio/mpeg">
+
+    <source
+        src="birthday.mp3"
+        type="audio/mpeg">
+
 </audio>
 
-<button class="music-btn"
-        onclick="toggleMusic()"
-        id="musicButton">
+
+<button
+    class="music-btn"
+    onclick="toggleMusic()"
+    id="musicButton">
+
     🎵
+
 </button>
 
 
@@ -418,275 +767,465 @@ button {
      PAGE 1
 ========================= -->
 
-<section class="page active" id="page1">
+<section
+    class="page active"
+    id="page1">
 
-    <div class="floating-heart" style="
+
+    <!-- Floating hearts -->
+
+    <div
+        class="floating-heart"
+        style="
         left:10%;
         animation-duration:8s;
-        font-size:25px;">♥</div>
+        font-size:25px;">
+        ♥
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:25%;
         animation-duration:11s;
         animation-delay:2s;
-        font-size:18px;">♡</div>
+        font-size:18px;">
+        ♡
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:50%;
         animation-duration:9s;
         animation-delay:4s;
-        font-size:28px;">♥</div>
+        font-size:28px;">
+        ♥
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:75%;
         animation-duration:12s;
         animation-delay:1s;
-        font-size:20px;">♡</div>
+        font-size:20px;">
+        ♡
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:90%;
         animation-duration:10s;
         animation-delay:3s;
-        font-size:26px;">♥</div>
+        font-size:26px;">
+        ♥
+    </div>
 
 
     <div class="card">
 
-        <div class="crown">👑</div>
 
-        <div class="cake">🎂</div>
-
-        <div class="subtitle">
-            Today is your special day
+        <div class="crown">
+            👑
         </div>
 
+
+        <div class="cake">
+            🎂
+        </div>
+
+
+        <div class="subtitle">
+            today is your special day ♡
+        </div>
+
+
         <h1>
-            Happy Birthday<br>
-            <span class="name">Noratirah binti Nurrudin Tsen 💗</span>
+
+            Happy Birthday
+
+            <br>
+
+            <span class="name">
+                Noratirah bt Nuruddin Tsen 💗
+            </span>
+
         </h1>
 
+
         <!--
-        CHANGE THE IMAGE BELOW
+        CHANGE THIS PHOTO
 
-        Example:
+        Upload her-photo.jpg
+        into your GitHub repository.
+
+        Then change the src below
+        to:
+
         src="her-photo.jpg"
-
-        Then upload her-photo.jpg
-        into the same GitHub repository.
         -->
 
         <img
             class="photo"
-            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80"
-            alt="Beautiful birthday girl"
-        >
+            src="her-photo.jpg"
+            alt="My beautiful girl">
+
 
         <p class="message">
-            Teruntuk wanita cantil in my world,
+
+            Teruntuk wanita cantik in my world,
             Is made this just for you. 🌷
+
+            <br><br>
+
+            Because you deserve something
+            as cute as you. hehe. 💗
+
         </p>
 
-        <button class="main-btn"
-                onclick="openLetter()">
-            💌 Open Your Birthday Letter
+
+        <button
+            class="main-btn"
+            onclick="openLetter()">
+
+            💌 open your little letter
+
         </button>
 
+
     </div>
+
 </section>
+
 
 
 <!-- =========================
      PAGE 2
 ========================= -->
 
-<section class="page" id="page2">
+<section
+    class="page"
+    id="page2">
 
-    <div class="floating-heart" style="
+
+    <div
+        class="floating-heart"
+        style="
         left:8%;
-        animation-duration:9s;">♥</div>
+        animation-duration:9s;">
+        ♥
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:30%;
         animation-duration:12s;
-        animation-delay:2s;">♡</div>
+        animation-delay:2s;">
+        ♡
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:60%;
         animation-duration:10s;
-        animation-delay:1s;">♥</div>
+        animation-delay:1s;">
+        ♥
+    </div>
 
-    <div class="floating-heart" style="
+    <div
+        class="floating-heart"
+        style="
         left:85%;
         animation-duration:13s;
-        animation-delay:3s;">♡</div>
+        animation-delay:3s;">
+        ♡
+    </div>
 
 
     <div class="letter">
 
+
         <h2>
-            A Little Letter For You 💕
+            a little letter<br>
+            for you 💕
         </h2>
 
-        <p>
-            Happy birthday, sayang. 🥺💗
-        </p>
 
         <p>
-            Haritok bukan hari yang biasa. It's the day
-            the world got a little brighter because
-            <span class="highlight">you were born</span>.
+
+            Happy birthday, sayang 💗
+
         </p>
 
-        <p>
-            Is harap Atirah tauk how incredibly special you
-            are to me. Your smile, your laugh, your
-            little habits, your silly moments...
-            somehow semua ya jadi my favorite things.
-        </p>
 
         <p>
-            Thank you for being someone who makes
-            ordinary days feel special. Thank you for
-            all the memories we've made and all the
-            ones we haven't made yet.
+
+            Today bukan hari yang biasa
+
+            It's the day the world got
+            a little brighter because
+            <span class="highlight">
+                you were born
+            </span>.
+
         </p>
 
-        <p>
-            On your birthday, Is wish you happiness
-            that stays, dreams that come true,
-            peaceful days, exciting adventures,
-            and countless reasons to smile. 🌸
-        </p>
 
         <p>
-            And is harap is dapat selalu ada
-            for many more ur special days — annoying you,
-            making you laugh, and loving you a little
-            more every year. ❤️
+
+            Is hope atirah tauk how incredibly
+            special you are to me.
+
+            Your smile, your laugh,
+            your little habits,
+            your silly moments...
+
+            somehow semua ya jadi
+            my favorite things. 🥹
+
         </p>
 
+
         <p>
+
+            Thank you for being someone
+            who makes ordinary days
+            feel special.
+
+            Thank you for all the memories
+            we've made and all the memories
+            we haven't made yet. 🌷
+
+        </p>
+
+
+        <p>
+
+            On your birthday, Is wish you
+            happiness that stays,
+            dreams that come true,
+            peaceful days,
+            exciting adventures,
+
+            and lots and lots of reasons
+            to smile. ✨
+
+        </p>
+
+
+        <p>
+
+            And selfishly...
+
+            Is harap Is selalu ada
+            for many more on ur special days.
+
+            Annoying you,
+            making you laugh,
+            stealing your attention,
+
+            and loving you
+            a little more every year. ❤️
+
+        </p>
+
+
+        <p>
+
             You deserve the absolute best.
-            Never forget that.
+
+            <br>
+
+            Never forget that, okay? 
+
         </p>
+
 
         <div class="signature">
-            Forever yours,<br>
-            ❤️ Your capybara hensem
+
+            forever yours, ♡
+
+            <br>
+
+            ❤️ your handsome
+
         </div>
 
 
-        <button class="main-btn"
-                onclick="showSurprise()">
-            🎁 One Last Surprise
+        <button
+            class="main-btn"
+            onclick="showSurprise()">
+
+            🎁 one last surprise
+
         </button>
 
 
-        <div class="surprise" id="surprise">
+        <div
+            class="surprise"
+            id="surprise">
 
-            🌷 You are beautiful.<br>
-            💗 You are precious.<br>
-            ✨ You are loved.<br><br>
+            🌷 you are beautiful.
 
-            And most importantly...
+            <br>
+
+            💗 you are precious.
+
+            <br>
+
+            ✨ you are loved.
+
+            <br><br>
+
+            and most importantly...
 
             <br><br>
 
             <strong>
-                I'm really, really lucky to have you. 🥺❤️
+
+                i'm really, really lucky
+                to have you. 🥺❤️
+
             </strong>
 
             <br><br>
 
-            Happy Birthday, beautiful. 🎂🎀
+            happy birthday, sayangkuuu. 🎂🎀💕
 
         </div>
 
 
-        <button class="small-btn"
-                onclick="goBack()">
-            ← Go Back
+        <button
+            class="small-btn"
+            onclick="goBack()">
+
+            ← go back
+
         </button>
 
+
     </div>
+
 </section>
 
 
+
 <script>
+
 
 /* =========================
    LOADING
 ========================= */
 
-window.addEventListener("load", function() {
+window.addEventListener(
+    "load",
+    function() {
 
-    setTimeout(function() {
+        setTimeout(
+            function() {
 
-        const loading =
-            document.getElementById("loading");
+                const loading =
+                    document.getElementById(
+                        "loading"
+                    );
 
-        loading.style.opacity = "0";
+                loading.style.opacity =
+                    "0";
 
-        setTimeout(function() {
-            loading.style.display = "none";
-        }, 800);
+                setTimeout(
+                    function() {
 
-    }, 1500);
+                        loading.style.display =
+                            "none";
 
-});
+                    },
+                    800
+                );
+
+            },
+            1500
+        );
+
+    }
+);
 
 
 /* =========================
-   PAGE NAVIGATION
+   OPEN LETTER
 ========================= */
 
 function openLetter() {
 
     document
         .getElementById("page1")
-        .classList.remove("active");
+        .classList
+        .remove("active");
+
 
     document
         .getElementById("page2")
-        .classList.add("active");
+        .classList
+        .add("active");
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(0,0);
+
 
     heartExplosion();
 
-    /*
-       Safari requires user interaction before
-       playing audio, so this is a good place
-       to start the music.
-    */
 
     const music =
         document.getElementById("music");
 
+
     music.play()
-        .then(() => {
-            document
-                .getElementById("musicButton")
-                .innerText = "🔊";
-        })
-        .catch(() => {
-            // Music can still be started
-            // with the music button.
-        });
+        .then(
+            function() {
+
+                document
+                    .getElementById(
+                        "musicButton"
+                    )
+                    .innerText = "🔊";
+
+            }
+        )
+        .catch(
+            function() {
+
+                // Safari may require
+                // another tap.
+
+            }
+        );
+
 }
 
+
+/* =========================
+   GO BACK
+========================= */
 
 function goBack() {
 
     document
         .getElementById("page2")
-        .classList.remove("active");
+        .classList
+        .remove("active");
+
 
     document
         .getElementById("page1")
-        .classList.add("active");
+        .classList
+        .add("active");
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(0,0);
+
 }
 
 
@@ -698,9 +1237,12 @@ function showSurprise() {
 
     document
         .getElementById("surprise")
-        .classList.add("show");
+        .classList
+        .add("show");
+
 
     heartExplosion();
+
 }
 
 
@@ -713,26 +1255,45 @@ function toggleMusic() {
     const music =
         document.getElementById("music");
 
+
     const button =
-        document.getElementById("musicButton");
+        document.getElementById(
+            "musicButton"
+        );
+
 
     if (music.paused) {
 
         music.play()
-            .then(() => {
-                button.innerText = "🔊";
-            })
-            .catch(() => {
-                alert(
-                    "Tap the button again to start the music 🎵"
-                );
-            });
+            .then(
+                function() {
 
-    } else {
+                    button.innerText =
+                        "🔊";
+
+                }
+            )
+            .catch(
+                function() {
+
+                    alert(
+                        "Tap again to play the music 🎵"
+                    );
+
+                }
+            );
+
+    }
+
+    else {
 
         music.pause();
-        button.innerText = "🎵";
+
+        button.innerText =
+            "🎵";
+
     }
+
 }
 
 
@@ -743,6 +1304,7 @@ function toggleMusic() {
 function heartExplosion() {
 
     const hearts = [
+
         "💗",
         "💕",
         "💖",
@@ -750,37 +1312,79 @@ function heartExplosion() {
         "❤️",
         "🌸",
         "✨"
+
     ];
 
-    for (let i = 0; i < 35; i++) {
+
+    for (
+        let i = 0;
+        i < 35;
+        i++
+    ) {
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        heart.className = "explosion";
+
+        heart.className =
+            "explosion";
+
 
         heart.innerText =
             hearts[
                 Math.floor(
-                    Math.random() * hearts.length
+                    Math.random()
+                    * hearts.length
                 )
             ];
 
+
         const x =
-            (Math.random() * 500 - 250) + "px";
+            (
+                Math.random()
+                * 500
+                - 250
+            ) + "px";
+
 
         const y =
-            (Math.random() * 600 - 300) + "px";
+            (
+                Math.random()
+                * 600
+                - 300
+            ) + "px";
 
-        heart.style.setProperty("--x", x);
-        heart.style.setProperty("--y", y);
 
-        document.body.appendChild(heart);
+        heart.style.setProperty(
+            "--x",
+            x
+        );
 
-        setTimeout(() => {
-            heart.remove();
-        }, 1400);
+
+        heart.style.setProperty(
+            "--y",
+            y
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(
+            function() {
+
+                heart.remove();
+
+            },
+            1400
+        );
+
     }
+
 }
 
 </script>
