@@ -302,33 +302,32 @@ h1 {
 ========================= */
 
 .photo {
-
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 9 / 16;
+    height: auto;
 
     margin: 25px auto;
 
-    border-radius: 50%;
-
-    border: 7px solid #ffd1df;
+    border-radius: 20px;
+    border: 6px solid #ffd1df;
 
     object-fit: cover;
+    display: block;
 
     box-shadow:
         0 10px 30px
-        rgba(205,79,120,.2);
+        rgba(205, 79, 120, .2);
 
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
 
-    transition:
-        transform .3s ease;
+    transition: transform .3s ease;
 }
 
 .photo:hover {
-
     transform:
-        rotate(3deg)
-        scale(1.04);
+        rotate(2deg)
+        scale(1.02);
 }
 
 
@@ -867,10 +866,14 @@ button {
         src="her-photo.jpg"
         -->
 
-        <img
+        <video
             class="photo"
-            src="her-photo.jpg"
-            alt="My beautiful girl">
+            src="her-video.mp4"
+            controls
+            playsinline
+            preload="metadata"
+            aria-label="A special video for my beautiful girl">
+        </video>
 
 
         <p class="message">
